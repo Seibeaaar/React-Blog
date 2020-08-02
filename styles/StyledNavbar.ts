@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const NavbarWrapper = styled.nav`
   border-bottom: 1px solid lightgrey;
-  padding: 0 15px;
+  padding: 0 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
