@@ -7,7 +7,9 @@ const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Navbar />
-      <Component {...pageProps} />
+      <div className="container">
+        <Component {...pageProps} />
+      </div>
     </>
   );
 };

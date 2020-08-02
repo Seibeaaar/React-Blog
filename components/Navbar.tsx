@@ -1,8 +1,14 @@
+import Link from 'next/link';
+import NavbarWrapper from '../styles/StyledNavbar';
+
 const Navbar: React.FC = () => {
   return (
-    <nav>
+    <NavbarWrapper>
       <h1>Hello</h1>
-    </nav>
+      <Link href="/posts/new">
+        <a className="nav__btn">Create a new post</a>
+      </Link>
+    </NavbarWrapper>
   );
 };
 
