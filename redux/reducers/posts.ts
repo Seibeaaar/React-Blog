@@ -1,15 +1,17 @@
 // eslint-disable-next-line no-unused-vars
 import { PostsInit } from '../types';
-import { GET_POSTS } from '../actions/constants';
 
 const initialState = {
   posts: [],
+  error: null,
 };
 
 const postsReducer = (state: PostsInit = initialState, { type, payload }) => {
   switch (type) {
-    case GET_POSTS:
+    case 'GET_POSTS_SUCCESS':
       return { ...state, posts: payload };
+    case 'GET_POSTS_ERROR':
+      return { ...state, error: payload };
     default:
       return state;
   }

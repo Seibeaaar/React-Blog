@@ -1,5 +1,3 @@
-import { GET_POSTS, GET_POST_BY_ID } from './actions/constants';
-
 // Post types
 export type CommentItem = {
   id: number,
@@ -15,14 +13,10 @@ export type Post = {
 };
 
 // Action interfaces
-export interface GetPostsAction {
-  type: typeof GET_POSTS,
-  payload: Array<Post>,
-}
 
-export interface GetPostByIdAction {
-  type: typeof GET_POST_BY_ID,
-  payload: Post,
+export interface WatcherAction {
+  type: string,
+  payload?: string,
 }
 
 // Posts reducer's initial state
