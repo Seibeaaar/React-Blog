@@ -4,6 +4,7 @@ import { fetchPosts, fetchCurrentPost } from '../api/index';
 function* fetchAllPosts() {
   try {
     const posts = yield call(fetchPosts);
+    // reverse method is used to display latest posts first
     yield put({ type: 'GET_POSTS_SUCCESS', payload: posts.reverse() });
   } catch (e) {
     yield put({ type: 'GET_POSTS_ERROR', payload: e });
@@ -12,7 +13,7 @@ function* fetchAllPosts() {
 
 function* fetchPostById(action) {
   try {
-    const currentPost = yield call(fetchCurrentPost, action.payload.id);
+    const currentPost = yield call(fetchCurrentPost, action.payload);
     yield put({ type: 'GET_POST_BY_ID_SUCCESS', payload: currentPost });
   } catch (e) {
     yield put({ type: 'GET_POST_BY_ID_ERROR', payload: e });

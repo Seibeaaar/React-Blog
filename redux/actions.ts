@@ -7,7 +7,7 @@ export const getPostsRequest = (): WatcherAction => {
   };
 };
 
-export const getPostByIdRequest = (id): WatcherAction => {
+export const getPostByIdRequest = (id: number): WatcherAction => {
   return {
     type: 'GET_POST_BY_ID_REQUEST',
     payload: id,

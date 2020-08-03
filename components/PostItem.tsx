@@ -20,7 +20,7 @@ const PostItem: React.FC<PostProps> = ({
   return (
     <PostWrapper>
       <div className="post__info">
-        <Link href="/posts/:id" as={`/posts/${id}`}>
+        <Link href="/posts/[id]" as={`/posts/${id}`}>
           <a>
             <h3>{ title }</h3>
           </a>
