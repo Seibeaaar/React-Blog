@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { CommentItem } from '../redux/types';
 import PostWrapper from '../styles/StyledPost';
 
@@ -12,12 +13,18 @@ type PostProps = {
 }
 
 const PostItem: React.FC<PostProps> = ({
-  info: { title, body, comments },
+  info: {
+    id, title, body, comments,
+  },
 }) => {
   return (
     <PostWrapper>
       <div className="post__info">
-        <h3>{ title }</h3>
+        <Link href="/posts/:id" as={`/posts/${id}`}>
+          <a>
+            <h3>{ title }</h3>
+          </a>
+        </Link>
         <p>{ body }</p>
       </div>
       <div className="post__comments">

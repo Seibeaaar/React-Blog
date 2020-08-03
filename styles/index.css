@@ -15,6 +15,14 @@ a {
   color: #000;
 }
 
+input, textarea {
+  display: block;
+}
+
+textarea {
+  resize: none;
+}
+
 .container {
   max-width: 1140px;
   margin: auto;

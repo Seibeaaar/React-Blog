@@ -16,7 +16,7 @@ export type Post = {
 
 export interface WatcherAction {
   type: string,
-  payload?: string,
+  payload?: number,
 }
 
 // Posts reducer's initial state

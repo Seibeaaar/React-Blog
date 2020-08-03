@@ -28,6 +28,7 @@
     "react/jsx-props-no-spreading": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
     "arrow-body-style": "off",
+    "no-shadow": "off",
     "import/extensions": [
       "error",
       "ignorePackages",
