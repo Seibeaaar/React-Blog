@@ -1,21 +1,19 @@
-import { useEffect } from 'react';
-import { useRouter } from 'next/router';
-import { connect } from 'react-redux';
 import Head from 'next/head';
-import { getPostByIdRequest } from '../../redux/actions';
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
+import { fetchCurrentPost } from '../../api';
 import { Post, WatcherAction } from '../../redux/types';
 import PostPageWrapper from '../../styles/StyledPostPage';
 
-type PostPageProps = {
-  post: Post;
-  getPostByIdRequest: () => WatcherAction;
+/*
+Using server-side props here because post is being rendered, but data isn't fetched yet, so to avoid
+that problem, we should fetch data props from server side
+*/
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const post = await fetchCurrentPost(ctx.query.id);
+  return { props: { post } };
 };
 
-const PostPage: React.FC<PostPageProps> = ({ post, getPostByIdRequest }) => {
-  const router = useRouter();
-  useEffect(() => {
-    getPostByIdRequest(router.query.id.toString());
-  }, []);
+const PostPage: React.FC = ({ post }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
     <>
       <Head>
@@ -41,9 +39,4 @@ const PostPage: React.FC<PostPageProps> = ({ post, getPostByIdRequest }) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  const { post } = state.current;
-  return { post };
-};
-
-export default connect(mapStateToProps, { getPostByIdRequest })(PostPage);
+export default PostPage;

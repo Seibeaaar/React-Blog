@@ -11,7 +11,7 @@ export const fetchPosts = async (): Promise<Post[]> => {
   }
 };
 
-export const fetchCurrentPost = async (id): Promise<Post[]> => {
+export const fetchCurrentPost = async (id: string): Promise<Post[]> => {
   try {
     const { data } = await axios.get(`${process.env.BASE_API_URL}/${id}?_embed=comments`);
     return data;

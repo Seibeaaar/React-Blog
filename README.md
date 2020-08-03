@@ -1,30 +1,23 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# React Blog
+React Blog is a simple blog project that gives users the opportunity to read latest posts, comments to those posts and create a new one on their own.
 
 ## Getting Started
-
-First, run the development server:
-
+First, you have to clone the [repository](https://github.com/Seibeaaar/React-Blog.git) of the project by typing such command in your terminal:
 ```bash
-npm run dev
-# or
-yarn dev
+git clone https://github.com/Seibeaaar/React-Blog.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open the cloned project in your code editor and use your terminal to install all dependencies and packages needed by typing such command:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+When all packages are installed, run internal script:
+```bash
+npm run dev
+```
+and in the terminal you will get the link to the localhost on port 3000. Open it and there you go.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Main Stack
+Project is built with Typescript with the usage of Next.js, Redux(redux-saga as middleware), styled-components for UI, axios for handling requests.
+API used to fetch posts: [Simple Blog API](https://simple-blog-api.crew.red). 
