@@ -4,7 +4,7 @@ import { Post } from '../redux/types';
 
 export const fetchPosts = async (): Promise<Post[]> => {
   try {
-    const { data } = await axios.get(`${process.env.BASE_API_URL}?_embed=comments`);
+    const { data } = await axios.get(`${process.env.BASE_API_URL}?_embed=comments&?_limit=20`);
     return data;
   } catch (e) {
     throw new Error(e);
