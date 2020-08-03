@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import { AppProps } from 'next/app';
 import { Provider } from 'react-redux';
 import withRedux from 'next-redux-wrapper';

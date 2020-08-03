@@ -1,5 +1,4 @@
 import Link from 'next/link';
-// eslint-disable-next-line no-unused-vars
 import { CommentItem } from '../redux/types';
 import PostWrapper from '../styles/StyledPost';
 

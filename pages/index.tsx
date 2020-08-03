@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import Head from 'next/head';
 import { connect } from 'react-redux';
 import { getPostsRequest } from '../redux/actions';
-// eslint-disable-next-line no-unused-vars
 import { PostsInit, Post, WatcherAction } from '../redux/types';
 import PostItem from '../components/PostItem';
 

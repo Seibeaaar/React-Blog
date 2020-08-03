@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import { WatcherAction } from './types';
 // Watcher actions (to call sagas when they are triggered)
 export const getPostsRequest = (): WatcherAction => {
@@ -7,7 +6,7 @@ export const getPostsRequest = (): WatcherAction => {
   };
 };
 
-export const getPostByIdRequest = (id: number): WatcherAction => {
+export const getPostByIdRequest = (id: string): WatcherAction => {
   return {
     type: 'GET_POST_BY_ID_REQUEST',
     payload: id,
