@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
+import { GetServerSideProps, InferGetServerSidePropsType, GetServerSidePropsContext } from 'next';
 import { fetchCurrentPost } from '../../api';
 import { Post, WatcherAction } from '../../redux/types';
 import PostPageWrapper from '../../styles/StyledPostPage';
@@ -8,8 +8,8 @@ import PostPageWrapper from '../../styles/StyledPostPage';
 Using server-side props here because post is being rendered, but data isn't fetched yet, so to avoid
 that problem, we should fetch data props from server side
 */
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const post = await fetchCurrentPost(ctx.query.id);
+export const getServerSideProps: GetServerSideProps = async (ctx: GetServerSidePropsContext) => {
+  const post = await fetchCurrentPost(ctx.query.id.toString());
   return { props: { post } };
 };
 
